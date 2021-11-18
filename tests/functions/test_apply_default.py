@@ -16,7 +16,7 @@ def test_no_default_value():
 def test_no_values():
     """Test returns Failure."""
     test = apply_default(None, None)
-    assert not is_successful(test)
+    assert is_successful(test)
 
 
 def test_bad_mapped_value():

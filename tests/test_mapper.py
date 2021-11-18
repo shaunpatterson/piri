@@ -69,7 +69,7 @@ def test_missing_data_gives_nothing():
         ],
     }
 
-    assert not is_successful(map_data(
+    assert is_successful(map_data(
         input_data,
         config,
     ))
@@ -107,6 +107,7 @@ def test_missing_data_creates_no_object():
 
     expected_result = [{
         'an_attribute': 'val',
+        'test': {'name': None}
     }]
 
     assert map_data(
@@ -275,17 +276,27 @@ def test_mapping_where_data_is_not_found():
             },
         ],
     }
+
     expected_result = [
         {
             'journal_id': 1,
             'invoices': [
-                {'amount': 1.2},
+                {'amount': None},
+                {'amount': 1.2}
             ],
+            'extrafield': [
+                {'datavalue': None}
+            ]
         },
         {
             'journal_id': 2,
-            'invoices': [],
-        },
+            'invoices': [
+                {'amount': None}
+            ],
+            'extrafield': [
+                {'datavalue': None}
+            ]
+        }
     ]
 
     assert map_data(

@@ -239,12 +239,17 @@ def test_mapping_where_data_is_not_found():
         {
             'journal_id': 1,
             'invoices': [
+                {'amount': None},
                 {'amount': 1.2},
             ],
+            'extrafield': [
+                {'datavalue': None}
+            ]
         },
         {
             'journal_id': 2,
-            'invoices': [],
+            'invoices': [{'amount': None}],
+            'extrafield': [{'datavalue': None}]
         },
     ]
 

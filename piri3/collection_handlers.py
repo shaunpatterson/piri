@@ -100,5 +100,5 @@ def create_iterable(input_data, iterable) -> ResultE[list]:
             for collection in collections
         ],
     ).lash(
-        lambda _: [input_data],
+        lambda _: Success([input_data]),
     )

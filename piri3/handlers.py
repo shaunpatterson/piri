@@ -1,10 +1,9 @@
 from typing import Any, Dict, List, Union
 
 from returns.curry import partial
-from returns.functions import tap
 from returns.pipeline import flow, is_successful
 from returns.pointfree import bind, map_, lash
-from returns.result import ResultE
+from returns.result import ResultE, Success
 
 from piri3.collection_handlers import fetch_data_by_keys
 from piri3.constants import (
@@ -63,14 +62,13 @@ def handle_mapping(
     return flow(
         collection,
         partial(fetch_data_by_keys, path=cfg.get(PATH, [])),
-        lash(lambda _: None),  # type: ignore
-        tap(print),
+        lash(lambda _: Success(None)),  # type: ignore
         bind(
             partial(
                 apply_regexp, regexp=cfg.get(REGEXP, {}),
             ),
         ),
-        lash(lambda _: None),  # type: ignore
+        lash(lambda _: Success(None)),  # type: ignore
         map_(partial(
             apply_slicing, slicing=cfg.get(SLICING, {}),
         )),
