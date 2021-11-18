@@ -71,7 +71,6 @@ def apply_if_statements(if_value, if_objects) -> MapValue:
 
     """
     for if_object in if_objects:
-
         if_value = _apply_statement(
             if_value, if_object,
         ).value_or(if_value)
@@ -309,12 +308,13 @@ def apply_default(
         >>> apply_default('nope', 'test').unwrap() == 'nope'
         True
     """
+
     if default is not None:
         if mapped_value is None:
             return default
 
     if mapped_value is None:
-        raise ValueError('Default value should not be `None`')
+        return None
 
     if not isinstance(mapped_value, ValueTypes):
         raise ValueError('Unable to give default value')
