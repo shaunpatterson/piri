@@ -101,6 +101,9 @@ def map_object(input_data, configuration) -> Optional[MappedDict]:
     ).map(object_data.update)
 
     # need this as long as empty dict is not seen as None by returns.maybe
+    if not object_data and configuration.get(SHOW_EMPTY):
+        return {}
+
     return object_data or None
 
 
