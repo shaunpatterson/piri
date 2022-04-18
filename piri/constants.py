@@ -9,6 +9,7 @@ ATTRIBUTES: Final = 'attributes'
 OBJECTS: Final = 'objects'
 BRANCHING_OBJECTS: Final = 'branching_objects'
 BRANCHING_ATTRIBUTES: Final = 'branching_attributes'
+SHOW_EMPTY: Final = 'show_empty'
 
 MAPPINGS: Final = 'mappings'
 SEPARATOR: Final = 'separator'
