@@ -1,4 +1,4 @@
-from piri.functions import apply_slicing
+from piri3.functions import apply_slicing
 
 
 def test_no_value_is_ok():

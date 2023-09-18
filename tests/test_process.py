@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from piri.process import process
+from piri3.process import process
 
 
 def test_creating_key_to_name():

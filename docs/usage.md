@@ -46,7 +46,7 @@ Remember that the more you handle the data before or after piri, the more you mu
 To use piri, import the process function and feed it your data and the configuration.
 
 ```python
-from piri.process import process
+from piri3.process import process
 
 your_data = []
 your_config = {}

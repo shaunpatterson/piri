@@ -1,7 +1,7 @@
 from returns.pipeline import is_successful
 from returns.result import Success
 
-from piri.collection_handlers import fetch_data_by_keys
+from piri3.collection_handlers import fetch_data_by_keys
 
 
 def test():

@@ -1,4 +1,4 @@
-from piri.collection_handlers import iterable_data_handler
+from piri3.collection_handlers import iterable_data_handler
 
 
 def test_iterable_data_handler():

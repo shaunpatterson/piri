@@ -1,6 +1,6 @@
 from returns.pipeline import is_successful
 
-from piri.collection_handlers import fetch_list_by_keys
+from piri3.collection_handlers import fetch_list_by_keys
 
 
 def test():

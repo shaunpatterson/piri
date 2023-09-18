@@ -85,7 +85,7 @@ Have a look at our introduction course [here](https://piri.readthedocs.io/en/sta
 ```python
 import simplejson
 
-from piri.process import process
+from piri3.process import process
 
 my_config = {
     'name': 'schema',

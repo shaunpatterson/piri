@@ -5,8 +5,8 @@ from returns.pipeline import flow, is_successful
 from returns.pointfree import bind, fix, map_, rescue
 from returns.result import ResultE
 
-from piri.collection_handlers import fetch_data_by_keys
-from piri.constants import (
+from piri3.collection_handlers import fetch_data_by_keys
+from piri3.constants import (
     CASTING,
     DEFAULT,
     IF_STATEMENTS,
@@ -16,7 +16,7 @@ from piri.constants import (
     SEPARATOR,
     SLICING,
 )
-from piri.functions import (
+from piri3.functions import (
     apply_casting,
     apply_default,
     apply_if_statements,
@@ -24,7 +24,7 @@ from piri.functions import (
     apply_separator,
     apply_slicing,
 )
-from piri.valuetypes import MapValue
+from piri3.valuetypes import MapValue
 
 
 def handle_mapping(

@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "piri"
-version = "2.2.0"
+name = "piri3"
+version = "3.0.0"
 description = "Configurable and documentable Json transformation and mapping"
-authors = ["Thomas Borgen <thomas.borgen@greenbird.com>"]
+authors = ["Shaun Patterson <thomas.borgen@greenbird.com>"]
 
 license = "MIT"
 readme = "docs/index.md"
@@ -27,7 +27,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.6"
-typing_extensions = "3.7.4"
+typing_extensions = ">= 3.7.4"
 pycountry = "19.8.18"
 returns = "^0.14.0"
 jsonschema = "^3.2.0"
