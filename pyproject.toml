@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "piri3"
-version = "3.0.0"
+version = "3.0.2"
 description = "Configurable and documentable Json transformation and mapping"
 authors = ["Shaun Patterson <thomas.borgen@greenbird.com>"]
 
@@ -26,15 +26,15 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.6"
-typing_extensions = ">= 3.7.4"
+python = "^3.9"
+typing_extensions = ">= 4.0"
 pycountry = "19.8.18"
-returns = "^0.14.0"
+returns = "^0.22.0"
 jsonschema = "^3.2.0"
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.782"
-wemake-python-styleguide = "^0.14.1"
+wemake-python-styleguide = "^0.18.0"
 pre-commit = "^1.18"
 simplejson = "^3.16"
 
