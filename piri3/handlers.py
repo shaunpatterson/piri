@@ -1,8 +1,9 @@
 from typing import Any, Dict, List, Union
 
 from returns.curry import partial
+from returns.functions import tap
 from returns.pipeline import flow, is_successful
-from returns.pointfree import bind, fix, map_, rescue
+from returns.pointfree import bind, map_, lash
 from returns.result import ResultE
 
 from piri3.collection_handlers import fetch_data_by_keys
@@ -62,20 +63,21 @@ def handle_mapping(
     return flow(
         collection,
         partial(fetch_data_by_keys, path=cfg.get(PATH, [])),
-        fix(lambda _: None),  # type: ignore
+        lash(lambda _: None),  # type: ignore
+        tap(print),
         bind(
             partial(
                 apply_regexp, regexp=cfg.get(REGEXP, {}),
             ),
         ),
-        fix(lambda _: None),  # type: ignore
+        lash(lambda _: None),  # type: ignore
         map_(partial(
             apply_slicing, slicing=cfg.get(SLICING, {}),
         )),
         bind(partial(
             apply_if_statements, if_objects=cfg.get(IF_STATEMENTS, []),
         )),
-        rescue(  # type: ignore
+        lash(  # type: ignore
             lambda _: apply_default(cfg.get(DEFAULT)),
         ),
     )
@@ -135,10 +137,10 @@ def handle_attribute(
 
     return flow(
         apply_separator(mapped_values, separator=cfg.get(SEPARATOR, '')),
-        fix(lambda _: None),  # type: ignore
+        lash(lambda _: "A"),  # type: ignore
         bind(ifs),
         bind(cast),
-        rescue(
+        lash(
             lambda _: apply_default(default=cfg.get(DEFAULT)),
         ),
     )

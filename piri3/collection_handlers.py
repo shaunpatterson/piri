@@ -99,6 +99,6 @@ def create_iterable(input_data, iterable) -> ResultE[list]:
             }
             for collection in collections
         ],
-    ).fix(
+    ).lash(
         lambda _: [input_data],
     )
