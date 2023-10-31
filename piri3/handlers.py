@@ -135,7 +135,7 @@ def handle_attribute(
 
     return flow(
         apply_separator(mapped_values, separator=cfg.get(SEPARATOR, '')),
-        lash(lambda _: "A"),  # type: ignore
+        lash(lambda _: Success(None)),  # type: ignore
         bind(ifs),
         bind(cast),
         lash(
