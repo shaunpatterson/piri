@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "piri3"
-version = "3.0.3"
+version = "3.0.4"
 description = "Configurable and documentable Json transformation and mapping"
 authors = ["Shaun Patterson <thomas.borgen@greenbird.com>"]
 
